@@ -71,14 +71,18 @@ myTrainingModel.fit(images_train, images_train, epochs=5, validation_data=(image
 
 #Showing the low dimensional output of my model
 idx = np.random.randint(images_test.shape[0], size=10)
-plt.figure()
+plt.figure(figsize=(10, 4))
 lowDim = myTrainingModel.predict(images[idx])
 for i in range(1,10,1):
     plt.subplot(2, 10, i);plt.imshow(images[idx[i-1]])
+    plt.gray()
     plt.axis("off")
     plt.subplot(2, 10, i+10);plt.imshow(lowDim[i-1])
+    plt.gray()
     plt.axis("off")
 
+plt.savefig('LowDim.png')
+plt.show()
 ########################################################
 #Visualising all 10,000 images in one single visualisation
 ########################################################
@@ -93,7 +97,7 @@ X_viz_in_2D = (X_viz_in_2D - X_viz_in_2D.min()) / (X_viz_in_2D.max() - X_viz_in_
 plt.figure(figsize=(10, 10))
 plt.axis("off")
 plt.scatter(X_viz_in_2D[:, 0], X_viz_in_2D[:, 1], c=test_labels, s=10, cmap='tab10')
-plt.savefig('./outputs/allTestIms_scatter_viz.png')
+plt.savefig('allTestIms_scatter_viz.png')
 plt.show()
 
 plt.figure(figsize=(10, 10))
@@ -106,7 +110,7 @@ for idx, position in enumerate(X_viz_in_2D):
     
 
 plt.axis("off")
-plt.savefig('./outputs/allTestIms_viz.png')
+plt.savefig('allTestIms_viz.png')
 plt.show()
 
 print("Done")
