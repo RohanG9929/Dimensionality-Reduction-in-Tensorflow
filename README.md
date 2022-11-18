@@ -5,10 +5,7 @@ Developing an Autoencoder to extract crucial features within its hidden layers.
 
 Below is the original image followed by the reconstruction performed by the decoder from the encoder extracted features.
 
-
 <img src="https://user-images.githubusercontent.com/103215628/202778348-0a1f7e72-9d77-475f-8f92-58ac50834450.png" width="640" height="256">
-
-![LowDim]()
 
 
 
